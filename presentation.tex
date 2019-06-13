@@ -1,0 +1,73 @@
+\documentclass[aspectratio=169,dvipdfmx,cjk]{beamer}
+
+% bibtex setup
+\usepackage{biblatex}
+\bibliography{ref}
+\beamertemplatetextbibitems
+\renewcommand*{\bibfont}{\footnotesize}
+
+% theme setup
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\usefonttheme{structurebold}
+\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+% title
+\title{タイトル}
+\author{苗字 氏名}
+\date{\the\year/\the\month/\the\day}
+\institute[東京大学]{東京大学 工学部 マテリアル工学科}
+\logo{\includegraphics[height=0.14\textheight]{image/logo.png}}
+
+% contents
+\begin{document}
+
+\begingroup
+    \setbeamertemplate{headline}{}
+
+    \maketitle
+\endgroup
+
+
+\begin{frame}[plain]{もくじ}
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{はじめに}
+\begin{frame}{はじめに}
+
+\end{frame}
+
+\section{方法}
+\begin{frame}{方法}
+    
+\end{frame}
+
+\section{結果}
+\begin{frame}{結果}
+    
+\end{frame}
+
+\section{まとめ}
+\begin{frame}{まとめ}
+    
+\end{frame}
+
+\part*{}
+\begingroup
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \begin{center}
+            {\bf 苗字 氏名}\\
+            {\scriptsize your-email@address.com}\\
+        \end{center}
+    \end{frame}
+
+    \begin{frame}[plain]{参考文献}
+        \nocite{*}
+        \printbibliography
+    \end{frame}
+\endgroup
+\end{document}
