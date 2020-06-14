@@ -1,26 +1,15 @@
 \documentclass[aspectratio=169,dvipdfmx]{beamer}
 
-% bibtex setup
-\usepackage{biblatex}
-\bibliography{ref}
-\beamertemplatetextbibitems
-\renewcommand*{\bibfont}{\footnotesize}
-\usepackage{pxjahyper}
-
-% theme setup
-\usetheme{Boadilla}
-\usecolortheme{beaver}
-\usefonttheme{structurebold}
-\useoutertheme{miniframes}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+\usepackage{assets/tex/info}
+\usepackage{assets/tex/preamble}
+\usepackage{assets/tex/mytikz}
 
 % title
 \title{タイトル}
-\author{苗字 氏名}
+\author{\myname}
 \date{\the\year/\the\month/\the\day}
-\institute[東京大学]{東京大学 工学部 マテリアル工学科}
-\logo{\includegraphics[height=0.14\textheight]{image/logo.png}}
+\institute[\myorgshort]{\myorg}
+\logo{\includegraphics[height=0.14\textheight]{assets/icon/logo.png}}
 
 % contents
 \begin{document}
@@ -61,8 +50,8 @@
     \setbeamertemplate{headline}{}
     \begin{frame}
         \begin{center}
-            {\bf 苗字 氏名}\\
-            {\scriptsize your-email@address.com}\\
+            {\bf \myname}\\
+            {\scriptsize \mymail}\\
         \end{center}
     \end{frame}
 
