@@ -1,13 +1,12 @@
-
+% Packages
 \usepackage[version=3]{mhchem}
+\usepackage{pxjahyper}
 \usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{lmodern}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% フォントの設定
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Japanese Font
 \DeclareFontShape{JY2}{mc}{m}{it}{<->ssub*mc/m/n}{}
 \DeclareFontShape{JY2}{mc}{m}{sl}{<->ssub*mc/m/n}{}
 \DeclareFontShape{JY2}{mc}{m}{sc}{<->ssub*mc/m/n}{}
@@ -24,23 +23,29 @@
 \DeclareFontShape{JT2}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
 
 
-% bibtex setup
+% Bibtex Setup
 \usepackage{biblatex}
 \bibliography{ref}
 \beamertemplatetextbibitems
 \renewcommand*{\bibfont}{\footnotesize}
 
-% theme setup
+% Theme Setup
 \usetheme{Boadilla}
 \usecolortheme{beaver}
 \usefonttheme{structurebold}
 \useoutertheme{miniframes}
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
 \setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
-
-% Packages
-\usepackage[version=3]{mhchem}
-\usepackage{pxjahyper}
+\setbeamertemplate{subsection in toc}{\inserttocsectionnumber-\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamertemplate{subsection page}{
+    \begingroup
+    \begin{beamercolorbox}[sep=6pt,center,rounded=true,shadow=true]{subsection title}
+        \usebeamerfont{subsection title}\thesection-\thesubsection.~\insertsubsection\par
+    \end{beamercolorbox}
+    \endgroup
+}
+\AtBeginSubsection{\frame{\subsectionpage}}
 
 % Color
 \definecolor{myYellow}{RGB}{255,153,0}
@@ -48,3 +53,13 @@
 % TikZ
 \usepackage{tikz}
 \usetikzlibrary{positioning,shapes,arrows}
+
+% Description Spacing
+\let\olddescription=\description
+\let\endolddescription=\enddescription
+\renewenvironment{description}{\olddescription \itemsep1em}{\endolddescription}
+
+% Itemize Spacing
+\let\olditemize=\itemize
+\let\endolditemize=\enditemize
+\renewenvironment{itemize}{\olditemize \itemsep1em}{\endolditemize}
